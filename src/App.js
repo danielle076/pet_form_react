@@ -18,8 +18,7 @@ function App() {
 
     return (
         <form onSubmit={handleSubmit(onSuccess, onError)}>
-
-            <div>
+            <div className="row">
                 <label htmlFor="firstName">Voornaam: </label>
                 <input
                     name="firstName"
@@ -30,7 +29,7 @@ function App() {
                 {errors.firstName && <p>Voornaam is verplicht</p>}
             </div>
 
-            <div>
+            <div className="row">
                 <label htmlFor="lastName">Achternaam: </label>
                 <input
                     name="lastName"
@@ -41,7 +40,7 @@ function App() {
                 {errors.lastName && <p>Achternaam is verplicht</p>}
             </div>
 
-            <div>
+            <div className="row">
                 <label htmlFor="age">Leeftijd: </label>
                 <input
                     name="age"
@@ -52,7 +51,7 @@ function App() {
                 {errors.age && <p>Minimaal 18 jaar</p>}
             </div>
 
-            <div>
+            <div className="row">
                 <label htmlFor="zipCode">Postcode: </label>
                 <input
                     name="zipCode"
@@ -65,49 +64,57 @@ function App() {
 
             <fieldset>
                 <legend>Huisdier</legend>
-                <div>
-                    <input
-                        ref={register({required: true})}
-                        type="radio"
-                        value="cat"
-                        name="pet"
-                        id="pet-cat"
-                    />
-                    <label htmlFor="pet-cat">Kat</label>
+                <div className="huisdier">
+                    <label>
+                        <input
+                            ref={register({required: true})}
+                            type="radio"
+                            value="cat"
+                            name="pet"
+                            id="pet-cat"
+                        />
+                        Kat
+                    </label>
                 </div>
-                <div>
-                    <input
-                        ref={register({required: true})}
-                        type="radio"
-                        value="dog"
-                        name="pet"
-                        id="pet-dog"
-                    />
-                    <label htmlFor="pet-dog">Hond</label>
+                <div className="huisdier">
+                    <label>
+                        <input
+                            ref={register({required: true})}
+                            type="radio"
+                            value="dog"
+                            name="pet"
+                            id="pet-dog"
+                        />
+                        Hond
+                    </label>
                 </div>
-                <div>
-                    <input
-                        ref={register({required: true})}
-                        type="radio"
-                        value="hamster"
-                        name="pet"
-                        id="pet-hamster"
-                    />
-                    <label htmlFor="pet-hamster">Konijn</label>
+                <div className="huisdier">
+                    <label>
+                        <input
+                            ref={register({required: true})}
+                            type="radio"
+                            value="konijn"
+                            name="pet"
+                            id="pet-konijn"
+                        />
+                        Konijn
+                    </label>
                 </div>
-                <div>
-                    <input
-                        ref={register({required: true})}
-                        type="radio"
-                        value="other"
-                        name="pet"
-                        id="pet-other"
-                    />
-                    <label htmlFor="pet-other">Anders</label>
+                <div className="huisdier">
+                    <label>
+                        <input
+                            ref={register({required: true})}
+                            type="radio"
+                            value="other"
+                            name="pet"
+                            id="pet-other"
+                        />
+                        Anders
+                    </label>
                 </div>
                 {currentPet === 'other' && (
-                    <div>
-                        <label htmlFor="other-pet">Ander huisdier</label>
+                    <div className="huisdier">
+                        <label htmlFor="other-pet">Huisdier</label>
                         <input
                             ref={register({required: true})}
                             name="other-pet"
@@ -118,7 +125,7 @@ function App() {
                 )}
             </fieldset>
 
-            <div>
+            <div className="row">
                 <label htmlFor="remark">Opmerking: </label>
                 <textarea
                     name="remark"
@@ -127,7 +134,7 @@ function App() {
                 />
             </div>
 
-            <div>
+            <div className="agree">
                 <input
                     type="checkbox"
                     name="agree"
@@ -136,9 +143,11 @@ function App() {
                 />
                 <label htmlFor="agree">Ik ga akkoord met de voorwaarden</label>
             </div>
-
-            <button>Verzend</button>
+            <div>
+                <button>Verzend</button>
+            </div>
         </form>
+
     );
 }
 
