@@ -12,8 +12,10 @@ label {
     columns: 100px 2;
     /*background-color: lightpink;*/
     margin: 5px 0;
-    width: 220px;
+    width: 320px;
 }
+
+
 
 textarea {
     /*background-color: mediumpurple;*/
@@ -46,4 +48,11 @@ button {
     margin: 0 0 0 10px;
     background-color: #fff;
     color: #000;
+}
+
+.error {
+    /*background-color: black;*/
+    color: red;
+    font-size: small;
+    /*margin-bottom: 100px;*/
 }

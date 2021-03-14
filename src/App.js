@@ -26,7 +26,9 @@ function App() {
                     type="text"
                     ref={register({required: true})}
                 />
-                {errors.firstName && <p>Voornaam is verplicht</p>}
+                <div className="error">
+                {errors.firstName && <p>Voornaam verplicht</p>}
+                </div>
             </div>
 
             <div className="row">
@@ -37,7 +39,9 @@ function App() {
                     type="text"
                     ref={register({required: true})}
                 />
-                {errors.lastName && <p>Achternaam is verplicht</p>}
+                <div className="error">
+                {errors.lastName && <p>Achternaam verplicht</p>}
+                </div>
             </div>
 
             <div className="row">
@@ -48,7 +52,9 @@ function App() {
                     type="number"
                     ref={register({required: true, min: 18})}
                 />
+                <div className="error">
                 {errors.age && <p>Minimaal 18 jaar</p>}
+                </div>
             </div>
 
             <div className="row">
@@ -59,7 +65,9 @@ function App() {
                     type="text"
                     ref={register({required: true, pattern: /^[0-9]{4}[a-zA-Z]{2}$/})}
                 />
+                <div className="error">
                 {errors.zipCode && <p>Postcode klopt niet</p>}
+                </div>
             </div>
 
             <fieldset>
